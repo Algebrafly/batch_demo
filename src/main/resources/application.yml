@@ -1,0 +1,37 @@
+################### DataSource Configuration ##########################
+server:
+  port: 9901
+spring:
+  batch:
+    job:
+      enabled: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.6.108:3306/test_job?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+    username: root
+    password: 123456
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    auto-ddl: update
+    open-in-view: false
+init-db: false
+
+datasource-reader:
+  type: com.alibaba.druid.pool.DruidDataSource
+  url: jdbc:mysql://192.168.6.108:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+  username: root
+  password: 123456
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  continue-on-error: false
+  sql-script-encoding: UTF-8
+
+datasource-writer:
+  type: com.alibaba.druid.pool.DruidDataSource
+  url: jdbc:mysql://192.168.6.108:3306/hdfs?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=GMT
+  username: root
+  password: 123456
+  driver-class-name: com.mysql.cj.jdbc.Driver
+  continue-on-error: false
+  sql-script-encoding: UTF-8
+
